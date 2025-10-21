@@ -336,7 +336,7 @@ const Createpage = () => {
     const mainImage = document.querySelector('img[width="800"][height="600"]');
     const url =
       (mainImage as HTMLImageElement)?.src ??
-      `${env.IMAGEKIT_URL_ENDPOINT}${uploadedImage.filePath}`;
+      `${env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT}${uploadedImage.filePath}`;
 
     window.open(url, "_blank");
     toast.success("Download started!");
@@ -730,7 +730,7 @@ const Createpage = () => {
                             </div>
                             )}
                             <ImageKitImage
-                            urlEndpoint={env.IMAGEKIT_URL_ENDPOINT}
+                            urlEndpoint={env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT}
                             src={uploadedImage.filePath}
                             alt={uploadedImage.name}
                             width={800}
@@ -803,7 +803,7 @@ const Createpage = () => {
                         {/* Main image */}
                         <div className="relative h-full w-full overflow-hidden">
                             <ImageKitImage
-                            urlEndpoint={env.IMAGEKIT_URL_ENDPOINT}
+                            urlEndpoint={env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT}
                             src={project.filePath}
                             alt={project.name ?? "Project"}
                             width={300}
